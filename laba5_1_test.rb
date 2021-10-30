@@ -16,6 +16,6 @@ class TestMeme < Minitest::Test
   end
 
   def test_2
-    assert_equal(nil, function(@wrong_first_parametr, @second_parametr))
+    assert_nil(function(@wrong_first_parametr, @second_parametr))
   end
 end
