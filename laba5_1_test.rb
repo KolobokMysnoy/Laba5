@@ -5,7 +5,7 @@ require 'minitest/autorun'
 
 class TestMeme < Minitest::Test
   def setup
-    @result = 4.9742
+    @result = 4.8025
     @first_parametr = 5
     @wrong_first_parametr = 'aa'
     @second_parametr = 6
