@@ -3,30 +3,32 @@
 require './laba5_2'
 require 'minitest/autorun'
 
-class TestMeme < Minitest::Test
+def generate_word
+  Faker::Music.chord
+end
+
+class FunctionTest < Minitest::Test
   def setup
     @needed = []
     @result = []
-    4.times do |_xa|
-      str1 = []
-      str2 = []
+    4.times do
+      string_normal = []
+      string_rev = []
       10.times do |ind|
-        word = generate_word
-        if ind.odd?
-          str2.push(word.reverse)
-        else
-          str2.push(word)
-        end
-        str1.push(word)
+        string_normal[ind] = generate_word
+        ind.odd? ? string_rev.push(string_normal[ind].reverse) : string_rev.push(string_normal[ind])
+        # Я немного не понял про else, поэтому избавился от word
       end
-      str1 = str1.join(' ')
-      str2 = str2.join(' ')
-      @needed.push(str1)
-      @result.push(str2)
+      needed.push(string_normal.join(' '))
+      result.push(string_rev.join(' '))
     end
   end
 
-  def test_1
-    assert_equal(@result, string_not_even_reverse(@needed))
+  def test_for_standart_work
+    assert_equal(result, string_reverse_even(needed))
   end
+
+  private
+
+  attr_reader :result, :needed
 end

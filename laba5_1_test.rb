@@ -3,7 +3,7 @@
 require './laba5_1'
 require 'minitest/autorun'
 
-class TestMeme < Minitest::Test
+class TestExampleFunction < Minitest::Test
   def setup
     @result = 4.8025
     @first_parametr = 5
@@ -11,11 +11,15 @@ class TestMeme < Minitest::Test
     @second_parametr = 6
   end
 
-  def test_1
-    assert_in_delta(@result, function(@first_parametr, @second_parametr), 0.001)
+  def test_standart_work
+    assert_in_delta(result, function(first_parametr, second_parametr), 0.001)
   end
 
-  def test_2
-    assert_nil(function(@wrong_first_parametr, @second_parametr))
+  def test_for_nil
+    assert_nil(function(wrong_first_parametr, second_parametr))
   end
+
+  private
+
+  attr_reader :result, :first_parametr, :second_parametr, :wrong_first_parametr
 end
