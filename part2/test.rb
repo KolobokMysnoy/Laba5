@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './laba5_2'
+require './part2/main.rb'
 require 'minitest/autorun'
 
 def generate_word

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './laba5_1'
+require './part1/main.rb'
 require 'minitest/autorun'
 
 class TestExampleFunction < Minitest::Test
